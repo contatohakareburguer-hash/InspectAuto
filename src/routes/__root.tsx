@@ -4,6 +4,7 @@ import { PwaProvider } from "@/lib/pwa";
 import { Toaster } from "@/components/ui/sonner";
 import { Button } from "@/components/ui/button";
 import { Car, LayoutDashboard, History, LogOut } from "lucide-react";
+import Footer from "@/components/footer";
 
 import appCss from "../styles.css?url";
 
@@ -46,7 +47,6 @@ export const Route = createRootRoute({
       { name: "mobile-web-app-capable", content: "yes" },
       { property: "og:title", content: "InspectAuto — Inspeção Veicular Profissional" },
       { name: "twitter:title", content: "InspectAuto — Inspeção Veicular Profissional" },
-      { name: "description", content: "🚗 Inspect Auto – Inspeção Veicular Inteligente na Palma da Sua Mão. Transforme a forma como você realiza inspeções automotivas com o Inspect Auto." },
       { property: "og:description", content: "🚗 Inspect Auto – Inspeção Veicular Inteligente na Palma da Sua Mão. Transforme a forma como você realiza inspeções automotivas com o Inspect Auto." },
       { name: "twitter:description", content: "🚗 Inspect Auto – Inspeção Veicular Inteligente na Palma da Sua Mão. Transforme a forma como você realiza inspeções automotivas com o Inspect Auto." },
       { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/d4c661c7-e61f-42ee-bbc7-54dbdc556e28" },
@@ -121,7 +121,7 @@ function AppShell() {
   }
 
   return (
-    <div className="min-h-screen bg-background pb-20">
+    <div className="min-h-screen bg-background flex flex-col pb-20">
       <header className="sticky top-0 z-30 border-b bg-card/80 backdrop-blur-md">
         <div className="mx-auto flex max-w-3xl items-center justify-between px-4 py-3">
           <Link to="/" className="flex items-center gap-2">
@@ -139,9 +139,11 @@ function AppShell() {
         </div>
       </header>
 
-      <main className="mx-auto max-w-3xl px-4 py-6">
+      <main className="mx-auto max-w-3xl px-4 py-6 flex-1 w-full">
         <Outlet />
       </main>
+
+      <Footer />
 
       <nav className="fixed bottom-0 left-0 right-0 z-30 border-t bg-card/95 backdrop-blur-md">
         <div className="mx-auto flex max-w-3xl items-center justify-around px-2 py-2">
